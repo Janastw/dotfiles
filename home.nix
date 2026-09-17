@@ -1,13 +1,14 @@
 { config, pkgs, user, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/.dotfiles";
+  dotfiles = "${config.home.homeDirectory}/programming_headquarters/meta_workspace/.dotfiles";
 in
 
 {
   home.username = user;
   home.homeDirectory = "/Users/${user}";
   home.stateVersion = "24.11";
+  targets.genericLinux.enable = true;
   home.packages = with pkgs; [
     # cli i use constantly
     ripgrep   # fast search
